@@ -15,5 +15,5 @@
 *** Start Minikube ***
 
 --> apt install conntrack
---> minikube start --vm-driver=home
+--> minikube start --vm-driver=none
 --> minikube status

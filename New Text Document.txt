@@ -11,3 +11,9 @@
 *** Install Minikube ***
 
 --> curl -Lo minikube https://storage.googleapis.com/miniku... && chmod +x minikube && sudo mv minikube /usr/local/bin/
+
+*** Start Minikube ***
+
+--> apt install conntrack
+--> minikube start --vm-driver=home
+--> minikube status

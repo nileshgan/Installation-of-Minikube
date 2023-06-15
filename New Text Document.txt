@@ -2,20 +2,23 @@
 
 *** Now install docker ***
 
---> sudo apt update && apt -y install docker.io
+--> sudo apt update -y 
+--> sudo reboot
+--> sudo apt install docker.io -y
+--> sudo apt install -y curl wget apt-transport-https
+--> curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+--> sudo install minikube-linux-amd64 /usr/local/bin/minikube
+--> minikube version
 
 *** Install Kubectl ***
 
---> curl -LO https://storage.googleapis.com/kubern... -s https://storage.googleapis.com/kubern... && chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
+--> curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 
-*** Install Minikube ***
-
---> curl -Lo minikube https://storage.googleapis.com/miniku... && chmod +x minikube && sudo mv minikube /usr/local/bin/
-
-*** Start Minikube ***
-
---> apt install conntrack
---> minikube start --vm-driver=none
+--> chmod +x kubectl
+--> sudo mv kubectl /usr/local/bin/
+--> kubectl version -o yaml
+--> minikube start --driver=docker
+--> minikube start --addons=ingress --cpus=2 --cni=flannel --install-addons=true --kubernetes-version=stable --memory=6g
 --> minikube status
 
 ** Helm Installation **
